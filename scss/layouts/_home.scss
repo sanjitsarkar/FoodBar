@@ -123,11 +123,10 @@ display: inline-block;
         animation: fade_down .3s 1 forwards;   
         opacity: 0;
         margin: 0 auto;
-          width: .3em;
-        height: .3em;
+         
         transform: scale(0) translateY(2em);
-        
-        border-radius: 1em;
+           width: .3em;
+        height: .3em;
   background-color: $secondaryColor;;
       }
 //       @keyframes iris {
@@ -142,7 +141,9 @@ display: inline-block;
       @keyframes fade_down {
         to{
         opacity: 1;
+      
         transform: scale(1);
+
         }
       }
       
@@ -263,7 +264,7 @@ left:-30%;
   top:-30%;
   position: relative;
   filter: drop-shadow(0px 0px .4em rgba($color:$primaryColor,$alpha:.7));
-  background-image: url(../../images/food_2.png);
+  background-image: url(../../images/food_2.png) no-repeat;
 width: 9em;
 
 }
@@ -274,7 +275,7 @@ width: 9em;
 }
 .middle
 {
-  margin-top: -3.2em;
+  margin-top: -3em;
   .title
   {
   

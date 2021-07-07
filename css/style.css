@@ -169,10 +169,9 @@ h1, h2, h3, h4, h5, h6, p {
   animation: fade_down 0.3s 1 forwards;
   opacity: 0;
   margin: 0 auto;
+  transform: scale(0) translateY(2em);
   width: 0.3em;
   height: 0.3em;
-  transform: scale(0) translateY(2em);
-  border-radius: 1em;
   background-color: #ff0829;
 }
 @keyframes fade_down {
@@ -271,11 +270,11 @@ h1, h2, h3, h4, h5, h6, p {
   top: -30%;
   position: relative;
   filter: drop-shadow(0px 0px 0.4em rgba(40, 40, 40, 0.7));
-  background-image: url(../../images/food_2.png);
+  background-image: url(../../images/food_2.png) no-repeat;
   width: 9em;
 }
 .wrapper .dish_list .dish_card .middle {
-  margin-top: -3.2em;
+  margin-top: -3em;
 }
 .wrapper .dish_list .dish_card .middle .sub_title {
   font-size: 0.6em;
