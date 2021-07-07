@@ -117,6 +117,9 @@ h1, h2, h3, h4, h5, h6, p {
   align-items: center;
   flex-direction: column;
 }
+.wrapper .dish_view h1 {
+  margin-top: 0.5em;
+}
 .wrapper .dish_view .dish_image {
   width: 110%;
   filter: drop-shadow(0px 0px 0.4em rgba(40, 40, 40, 0.7));
@@ -219,7 +222,7 @@ h1, h2, h3, h4, h5, h6, p {
   font-weight: 500;
 }
 .wrapper .dish_desc .order_details .order_now_button {
-  padding: 0.5em 1em;
+  padding: 0.6em 1em;
   outline: none;
   border: none;
   font-weight: 600;
@@ -272,7 +275,7 @@ h1, h2, h3, h4, h5, h6, p {
   width: 9em;
 }
 .wrapper .dish_list .dish_card .middle {
-  margin-top: -2.2em;
+  margin-top: -3.2em;
 }
 .wrapper .dish_list .dish_card .middle .sub_title {
   font-size: 0.6em;
