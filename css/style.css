@@ -135,7 +135,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 .wrapper .right_nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   grid-area: 1/7/2/-1;
 }
 .wrapper .right_nav ul {

@@ -92,10 +92,13 @@ transform:rotate(0deg);
 .right_nav
 {
   display: flex;
-  justify-content:space-between;
+  justify-content:flex-end;
+
 grid-area: 1/7/2/-1;
+
 ul
 {
+
   padding: 1em 0;
   margin: 0;
   list-style: none;
