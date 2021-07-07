@@ -1,0 +1,14 @@
+@use "../abstracts/colors" as *;
+
+@each $colorm, $shades in $colors {
+    @each $shade, $value in $shades{
+        .text-#{$shade}
+        {
+            color:$value;
+        }
+         .bg-#{$shade}
+        {
+            color:$value;
+        }
+    }
+}

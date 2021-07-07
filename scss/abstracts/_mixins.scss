@@ -1,0 +1,54 @@
+@use "breakpoints" as *;
+
+@mixin button($bgColor:$primaryColor,$color:$accentColor,$text:"Submit") {
+    button
+    {
+        content: $text;
+        color:$accentColor;
+        background-color: $bgColor;
+    }
+}
+@mixin pseudo($loc:before,$pos:absolute,$content:"",$top:0,$right:0,$bottom:0,$left:0)
+{
+    position: relative;
+    &::#{$loc}
+    {
+        content: $content;
+        position: $pos;
+        top:$top;
+        right:$right;
+        bottom:$bottom;
+        left:$left;
+        @content;
+        // inset:$top $right $bottom $left;
+    }
+
+}
+
+@mixin hover()
+{
+
+    @include pseudo()
+    {
+        box-shadow: 1px 1px 2px rgba(black,0.1);
+        transition: transform 350ms ease-in-out;
+opacity: 0;
+    }
+
+    &:hover,&:focus
+    {
+        transition: transform 350ms ease-in-out;
+        transform: scale(1.05);
+        &::before
+        {
+            opacity: 1;
+        }
+    }
+}
+
+@mixin mq($key) {
+    $size:map-get($breakpoints,$key);
+    @media only screen and (min-width:$size) {
+        @content;
+    }
+}

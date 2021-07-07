@@ -1,0 +1,344 @@
+@use "../abstracts" as *;
+@use "../base"  as *;
+h1,h2,h3,h4,h5,h6,p{
+  margin: 0;
+  padding: 0;
+}
+.wrapper{
+  font-family: "Poppins";
+  height: 100vh;
+display: grid;
+grid-template: repeat(12,1fr)/repeat(12,1fr);
+a,button
+{
+  cursor: pointer;
+}
+.left_nav
+{
+  
+grid-area: 1/1/9/2;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-between;
+padding: 1.5em 0;
+i{
+    color: rgba($color: $primaryColor, $alpha: .8);
+    cursor: pointer;
+}
+ul
+{
+   
+  list-style: none;
+  display: flex;
+  width: 2em;
+  gap:2em;
+  transform: rotate(-90deg);  
+
+li
+{
+ 
+  a
+  {
+    color: rgba($color: $primaryColor, $alpha: .8);
+    display: block;
+    text-decoration: none;
+    font-weight: 500;
+    &:hover,&:focus{
+      color:$secondaryColor;
+    transition: all .2s ease-in-out;
+    
+    }
+  }
+  
+}
+}
+
+}
+.dish_view
+{
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+  background-color:$primaryColor;
+  color: white;
+grid-area: 1/3/8/6;
+display: flex;
+justify-content: flex-start;
+align-items: center;
+
+flex-direction: column;
+h1{
+  margin-top: .5em;
+}
+.dish_image
+{
+  // margin-top: -2em;
+  width: 120%;
+  filter: drop-shadow(0px 0px .4em rgba($color:$primaryColor,$alpha:.7));
+transform:rotate(0deg);
+&:hover,&:focus{
+  animation:10s rotate infinite linear;
+
+}
+}
+@keyframes rotate {
+  to
+  {
+    transform: rotate(360deg);
+  }
+}
+}
+.right_nav
+{
+  display: flex;
+  justify-content: space-between;
+grid-area: 1/8/2/-1;
+ul
+{
+  list-style: none;
+  li{
+display: inline-block;
+    padding-left: 2em;
+  
+  a{
+    font-weight: 500;
+    display: inlineblock;
+    text-decoration: none;
+    color:$primaryColor;
+    transition: all .2s ease-in-out;
+
+    &.active,&:hover,&:focus
+    {
+      transition: all .3s ease-in-out;
+      // animation:.3s iris reverse;
+      color:$secondaryColor;
+      @include pseudo($top:110%)
+      {
+        animation: fade_down .3s 1 forwards;   
+        opacity: 0;
+        margin: 0 auto;
+          width: .3em;
+        height: .3em;
+        transform: scale(0) translateY(2em);
+        
+        border-radius: 1em;
+  background-color: $secondaryColor;;
+      }
+//       @keyframes iris {
+//   from {
+//     clip-path: 
+//       path('M103.13 100C103 32.96 135.29 -0.37 200 0L0 0C0.35 66.42 34.73 99.75 103.13 100Z M199.35 200C199.83 133.21 167.75 99.88 103.13 100C102.94 165.93 68.72 199.26 0.46 200L199.35 200Z M103.13 100C167.46 99.75 199.54 133.09 199.35 200L200 0C135.15 -0.86 102.86 32.47 103.13 100Z M0 200C68.63 200 103 166.67 103.13 100C34.36 100.12 -0.02 66.79 0 0L0 200Z');
+//   }
+//   to {
+//     clip-path: path('M60.85 2.56C108.17 -44.93 154.57 -45.66 200.06 0.35L58.64 -141.07C11.93 -93.85 12.67 -45.97 60.85 2.56Z M139.87 340.05C187.44 293.16 188.33 246.91 142.54 201.29C95.79 247.78 48.02 247.15 -0.77 199.41L139.87 340.05Z M201.68 61.75C247.35 107.07 246.46 153.32 199.01 200.5L340.89 59.54C295.65 13.07 249.25 13.81 201.68 61.75Z M-140.61 141.25C-92.08 189.78 -44.21 190.51 3.02 143.46C-45.69 94.92 -46.43 47.05 0.81 -0.17L-140.61 141.25Z');
+//   }
+// }
+      @keyframes fade_down {
+        to{
+        opacity: 1;
+        transform: scale(1);
+        }
+      }
+      
+    }
+  }
+}
+}
+}
+.dish_desc
+{
+grid-area: 2/7/9/-1;
+display: flex;
+flex-direction: column;
+justify-content: center;
+// align-items: center;
+&_title
+{
+font-size: 3em;
+
+margin: 0;
+padding: 0;
+}
+&_desc
+{
+margin: 0;
+padding: 0;
+width: 80%;
+}
+
+.order_details
+{
+  display: flex;
+  align-items: center;
+
+  .order_price
+  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+      margin-right: 15em;
+      h1{
+padding: 0;
+margin:0;
+
+font-size: 1.6em;
+color: $secondaryColor;
+      }
+      h4{
+padding: 0;
+margin-top: -0.8em; 
+font-size: .5em;
+font-weight: 500;
+      }
+  }
+
+  .order_now_button{
+padding: .5em 1em;
+outline: none;
+border: none;
+font-weight: 600;
+background-color:$primaryColor;
+color:white;
+    transition: all .2s ease-in-out;
+
+&:hover,&:focus
+{
+    transition: all .2s ease-in-out;
+
+  background-color: $secondaryColor;
+  box-shadow: 0 .5em 1em rgba($color:$secondaryColor, $alpha: .4);
+}
+  }
+}
+}
+.dish_list
+{
+  justify-content: flex-end;
+  display: flex;
+  gap: 2em;
+grid-area: 9/1/12/-1;
+margin-right: 1em;
+.dish_card
+{
+
+  border-radius: 1em;
+  background-color:saturate($color: $primaryColor, $amount: 20);
+  color:white;
+  padding: 1em;
+display: flex;
+cursor: pointer;
+flex-direction: column;
+box-shadow: 0 1em 2em  rgba($color:$primaryColor, $alpha: .3);
+    transition: all .2s ease-in-out;
+
+&:hover
+{
+    transition: all .2s ease-in-out;
+
+box-shadow: 0 1.4em 1em  rgba($color:$primaryColor, $alpha: .3);
+// color:red;
+transform: scale(1.1);
+.dish_image
+{
+  animation: 10s rotate infinite linear;
+}
+}
+.top
+{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+.dish_image
+{
+  margin-left:-25%;
+  margin-top:-30%;
+  filter: drop-shadow(0px 0px .4em rgba($color:$primaryColor,$alpha:.7));
+  background-image: url(../../images/food_2.png);
+width: 8em;
+
+}
+.price
+{
+
+}
+}
+.middle
+{
+  .title
+  {
+  
+  }
+.sub_title
+{
+  font-size: .6em;
+  margin-top: - .5em;
+}
+}
+.bottom
+{
+  font-size: .8em;
+display: flex;
+justify-content: space-between;
+}
+}
+}
+footer.footer
+{
+grid-area: 12/1/-1/-1;
+display: flex;
+justify-content:center;
+width: 100%;
+align-items: center;
+position: relative;
+.sliders
+{
+ display: flex;
+ justify-self: center;
+// justify-content:center;
+// align-items: center;
+gap: 1em;
+
+  .dot{
+    cursor: pointer;
+    width: .8em;
+    height: .8em;
+    border-radius: .4em;
+  
+  
+ @for $i from 1 to 6
+   {
+     &_#{$i}
+     {
+       background-color: rgba($color: $secondaryColor, $alpha: (1/$i));
+
+     }
+   }
+    &.active,&:hover,&:focus{
+    background-color: $secondaryColor;
+    transition: all .2s ease-in-out;
+    
+      }
+  }
+ 
+}
+ .socials{
+   display: flex;
+   gap:1em;
+  position: absolute;
+  right:2em;
+  color:rgba($color: $primaryColor, $alpha: .9);
+  //  margin-left: auto;
+i
+{
+  cursor: pointer;
+  &:hover,&:focus{
+    transition: all .2s ease-in-out;
+
+color:$secondaryColor;
+  }
+}  
+}
+
+}
+}

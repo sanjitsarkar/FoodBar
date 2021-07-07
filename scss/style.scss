@@ -1,0 +1,15 @@
+@use "layouts";
+*,*::after,*::before
+{
+    box-sizing: border-box;
+}
+html,body
+{
+    padding:0;
+    margin: 0;
+    max-width: 100vw;
+    max-height: 100vh;
+}
+
+
+
